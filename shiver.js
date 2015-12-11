@@ -66,11 +66,11 @@ var Shiver = function (el, options) {
             'opacity:1;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-ms-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);'
 
 
-        $this.startRumble = function () {
+        $this.startShiver = function () {
             var ev = document.createEvent('Event');
-            ev.initEvent('startRumble', true, true);
+            ev.initEvent('startShiver', true, true);
 
-            cel.target.addEventListener('startRumble', function (e) {
+            cel.target.addEventListener('startShiver', function (e) {
                 e.stopPropagation();
                 clearInterval(interval);
                 interval = setInterval(shiverer, speed);
@@ -78,10 +78,10 @@ var Shiver = function (el, options) {
             cel.target.dispatchEvent(ev);
         };
 
-        $this.stopRumble = function () {
+        $this.stopShiver = function () {
             var ev = document.createEvent('Event');
-            ev.initEvent('stopRumble', true, true);
-            cel.target.addEventListener('stopRumble', function(e) {
+            ev.initEvent('stopShiver', true, true);
+            cel.target.addEventListener('stopShiver', function(e) {
                 e.stopPropagation();
                 clearInterval(interval);
                 if (inline) {
